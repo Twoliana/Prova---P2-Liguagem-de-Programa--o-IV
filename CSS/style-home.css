@@ -1,0 +1,102 @@
+header{
+    background: url("../imagens/cabecalho.jpg");
+    padding: 20px 0;
+}
+
+nav{
+    position: absolute;
+    top: 110px;
+    right: 0px;
+}
+
+.caixa{
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+nav li{
+    display: inline;
+    margin: 0 0 0 18px;
+}
+
+nav a{
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: #c78c19;
+    text-decoration: underline;
+    font-size: 23px;
+}
+
+.principal{
+    background: #CCCCCC;
+    padding: 30px;
+}
+#banner{
+    margin-left: 225px;
+    margin-right: auto;
+    width: 50%;
+    height: 00px;
+}
+
+.titulo_principal{
+    font-size: 20px;
+    padding: 20px;
+}
+
+.titulo_center{ 
+    text-align: center;
+    font-size: 22px;
+}
+
+p{ 
+    text-align: center;
+}
+
+#missao{
+    font-size: 22px;
+}
+
+em strong{
+    color: red;
+}
+
+.itens{
+    font-style: italic;
+}
+
+.beneficios{
+    background: #ffffff;
+    padding: 20px;
+}
+
+.benefiocios-lista{ 
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+    padding-top: 50px;
+    font-size: 25px;
+}
+
+.img_bene{
+    width: 50%;
+}
+
+footer{
+    background-color: black;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.copyright{
+    color: white;
+    font-size: 13px;
+    margin-top: 20px;
+}

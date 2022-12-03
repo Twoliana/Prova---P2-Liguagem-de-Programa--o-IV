@@ -1,0 +1,319 @@
+body p{
+    font-family: Arial
+}
+
+header{
+    background: url("../imagens/cabecalho.jpg");
+    padding: 20px 0;
+}
+
+nav{
+    position: absolute;
+    top: 110px;
+    right: 0px;
+}
+
+.caixa{
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+nav li{
+    display: inline;
+    margin: 0 0 0 18px;
+}
+
+nav a{
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif
+
+}
+
+nav a:hover{
+    text-decoration: underline;
+    font-size: 23px;
+}
+
+.produtos{
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.produtos li{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    box-sizing: border-box;
+    vertical-align: top;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+}
+
+.produtos li:hover{
+    border-color: rgb(21, 78, 153);
+}
+
+.produtos li:active{
+    border-color: #9c350d;
+}
+
+.produtos li:hover h2{
+    color: #9c350d;
+    font-size: 35px;
+}
+
+.produtos li:active h2{
+    color: rgb(21, 78, 153);
+    font-size: 36px;
+}
+
+.produtos h2{
+    font-size: 30px;
+    font-weight: bold;     
+}
+
+.descricao{
+    font-weight: bold; 
+ 
+}
+
+.preco{
+    font-size: 22px;
+    font-weight: bold; 
+    margin-top: 10px;  
+}
+
+footer{
+    background: url("../imagens/bg.jpg");
+    text-align: center;
+    padding: 40px 0;
+}
+
+.copyright{
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+main{
+    width: 940px;
+    margin: 0 auto;
+}
+
+form{
+    margin: 40px 0;
+}
+
+form label, form legend{
+    display: block;
+    font-size: 22px;
+    margin: 0 0 10px;
+    font-weight: bold;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+.input-padrao{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 15px;
+    width: 50%;
+}
+
+.horarios{
+    margin: 40px 0;
+}
+
+.selec_horarios{
+    font-size: 18px;
+}
+
+.contato{
+    margin: 40px 0;
+}
+
+.checkbox{
+    margin: 40px 0;
+}
+
+.enviar{
+    width: 20%;
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 15px;
+    border: none;
+    border-radius: 6px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.enviar:hover{
+    background: darkorange;
+    transform: scale(1.1);
+}
+
+table{
+   margin: 40px 50px; 
+    font-size: 24px;
+   font-family: 'Bebas Neue', cursive;
+}
+
+thead{
+    background: rgb(0, 24, 56);
+    color: white;
+    font-weight: bold;
+}
+
+td, th{
+    border: 1px solid black;
+    padding: 15px 8px;
+}
+
+td{
+  text-align: center;
+}
+
+/* Pagina inicial*/
+
+.banner{
+    margin-top: 10px;
+    margin-left: 20%;
+    orientation: center;
+    width: 900px;
+    height: 400px;
+}
+
+.titulo_principal{
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+    clear: left;
+    font-weight: bold;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.principal{
+    padding: 3em 0;
+    background: #FEFEFE;
+    width: 940px;
+    margin-top: 0 auto;
+}
+
+.principal p {
+    margin-bottom: 1em;
+}
+
+.principal strong{
+    font-weight: bold;
+}
+
+.principal em{
+    font-style: italic;
+}
+
+.img_bene{
+    width: 60%;
+}
+
+.utencilios{
+    width: 120px;
+    float: left;
+    margin: 0 20px 20px 0;
+    box-shadow:10px 10px 15px black;
+}
+
+.utencilios:hover{
+    opacity: 70%;
+    transition: 400ms;
+}
+
+.mapa{
+    padding: 0 3 1em ;
+    width: 940px;
+    margin-top: 0 auto;
+}
+
+.mapa h3{
+    text-align: center  ;
+    margin: 20px;
+}
+
+.mapa p{
+    text-align: center;
+    margin: 20px;
+}
+
+.beneficios{
+    padding: 3em;
+}
+
+.conteudo_bene{
+    width: 740px;
+    margin: 0 auto;
+}
+
+.beneficios_lista{
+    width: 40%;
+    margin-top: 20px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 20px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.itens{
+    line-height: 2;
+}
+
+.itens:before{
+    content: "\2022";
+}
+
+.img_bene{
+    width: 50%;
+    box-shadow:10px 10px 20px black;
+}
+
+.img_bene:hover{
+    opacity: 70%;
+    transition: 400ms;
+}
+
+.video{ 
+    width: 780px;
+    margin: 3em auto;
+}
+
+.letreiro{
+    color: #FEFEFE;
+}
+
+
+@media screen and (max-width: 480px) {
+    .caixa, .principal, .conteudo_bene, .mapa, .video{
+        width: auto;
+    }    
+
+    h1{
+        text-align: center;
+    }
+
+    nav{
+        position: static;
+    }
+
+    .beneficios_lista, .img_bene{
+        width: 100%;
+    }
+}
