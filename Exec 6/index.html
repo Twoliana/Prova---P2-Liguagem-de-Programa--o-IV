@@ -1,0 +1,53 @@
+<!DOCTYPE HTML> 
+<html> 
+    <head> 
+        <title> 
+            Exercicio 6
+        </title>
+    </head> 
+      
+    <body style = "text-align:center;">
+           
+        <h1 style="font-family:Arial;" > 
+            Exercicio 6 - Mudando a cor do fundo
+        </h1> 
+        
+        <h2 style="font-family:Arial"> 
+            Posicione o mousse na cor desejada
+        </h2>
+          
+          
+        <button onmouseover = "gfg_Run()" style="background-color:aqua; height: 120px; width: 120px; color: aqua; border-color: aqua;"> 
+            Azul clarinho
+        </button>
+
+        <button onmouseover = "gfg_Run2()" style="background-color:pink; height: 120px; width: 120px; color: pink; border-color: pink;"> 
+            Azul clarinho
+        </button>
+          
+        <button onmouseover = "gfg_Run3()" style="background-color:mediumorchid; height: 120px; width: 120px; color:mediumorchid; border-color: mediumorchid;"> 
+            Azul clarinho
+        </button>
+
+<!-- ---------------------- -->
+        <script>
+          
+            function changeColor(color) {
+                document.body.style.background = color;
+            }
+              
+            function gfg_Run() {
+                changeColor('aqua');
+            }         
+
+            function gfg_Run2() {
+                changeColor('pink');
+            }   
+
+            function gfg_Run3() {
+                changeColor('mediumorchid');
+            }   
+
+        </script> 
+    </body> 
+</html>                    
