@@ -1,97 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 
     <title>Exercicio 5</title>
     <style>
       body{
+        text-align: center;
         font-family: Arial, Helvetica, sans-serif;
+      }
+      form{
+        position: absolute;
+        width: 50px;
+        left: 25%;
+      }
+      #form_position{
+        position: relative;
+        right:500px;
+        position: absolute;
+        height: 500px;
       }
     </style>
 </head>
 <body>
     <h1 >Exercicio 05</h1>
     <h2>Cronometro</h2>
-
-    <form name="form_main" style="background-color: azure; text-align: center; font-size:xx-large; width: 50%">
-      <p>Cronometro parcial</p>
-
-        <div style="font-family:arial;">
-          <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">00</span>
-        </div>
-        <br>
-        <p>Cronometro total</p>
-        <div>
-          <span id="hour2">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">00</span>
-        </div>
-      
-        <br />
-      
-        <button type="button" name="start" style="background-color: green; font-family: arial; border-color: green; font-size: large;">
-          start</button>
-        <button type="button" name="reset" style="background-color: yellow; font-family: arial; border-color:yellow;font-size: large;">
-          restart</button>
-        <button type="button" name="pause" style="background-color: red; font-family: arial; border-color: red;font-size: large;">pause</button>
-        <button type="button" name="reset" style="background-color: aqua; font-family: arial; border-color: aqua;font-size: large;">reset</button>
-        
+    <div class="form_position">
+      <form name="form_main" style="background-color: azure; text-align: center; font-size:xx-large; width: 50%">
+        <p>Cronometro parcial</p>
+          <div style="font-family:arial;">
+            <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">00</span>
+          </div>
+          <br>
+          <p>Cronometro total</p>
+          <div>
+            <span id="hour2">00</span>:<span id="minute2">00</span>:<span id="second2">00</span>:<span id="millisecond2">00</span>
+          </div><br/>
+          <button type="button" name="start" style="background-color: #0ad50a; font-family: arial; border-color: #0ad50a; font-size: large;">
+            Start</button>
+          <button type="button" name="pause_parcial" style="background-color: #ea0707; font-family: arial; border-color:#ea0707;font-size: large;">
+            Pause Geral</button>
+          <button type="button" name="pause" style="background-color: #ffff3c; font-family: arial; border-color: #efef28;font-size: large;">
+            Pause Parcial</button>
+          <button type="button" name="reset" style="background-color: #49dbff; font-family: arial; border-color: #49dbff;font-size: large;">
+            Reset</button><br><br>
       </form>
+      </div>
       <script>
-        "use strict";
+        
+          let cron;
+        let hour = 0;
+        let minute = 0;
+        let second = 0;
+        let millisecond = 0;
+        //parcial
+        let cron2;
+        let hour2 = 0;
+        let minute2 = 0;
+        let second2 = 0;
+        let millisecond2 = 0;
 
-let hour = 0;
-let minute = 0;
-let second = 0;
-let millisecond = 0;
+        document.form_main.start.onclick = () => start();
+        document.form_main.pause.onclick = () => pause();
+        document.form_main.reset.onclick = () => reset();
+        document.form_main.pause_parcial.onclick = () => pause_parcial();
 
-let cron;
+        function start(){
+          pause();
+          pause_parcial();
+          cron = setInterval(() => { timer(); }, 10);
+          cron2 = setInterval(() => { timer_parcial(); }, 10);
+        }
+        function pause_parcial(){
+          clearInterval(cron2);
+        }
 
-document.form_main.start.onclick = () => start();
-document.form_main.pause.onclick = () => pause();
-document.form_main.reset.onclick = () => reset();
+        function pause(){
+          clearInterval(cron);
+        }
 
-function start() {
-  pause();
-  cron = setInterval(() => { timer(); }, 10);
-}
+        function reset(){
+          hour = 0;
+          minute = 0;
+          second = 0;
+          millisecond = 0;
+          hour2 = 0;
+          minute2 = 0;
+          second2 = 0;
+          millisecond2 = 0;
+          document.getElementById('hour').innerText = '00';
+          document.getElementById('minute').innerText = '00';
+          document.getElementById('second').innerText = '00';
+          document.getElementById('millisecond').innerText = '00';
+          //parcial
+          document.getElementById('hour2').innerText = '00';
+          document.getElementById('minute2').innerText = '00';
+          document.getElementById('second2').innerText = '00';
+          document.getElementById('millisecond2').innerText = '00';
+        }
 
-function pause() {
-  clearInterval(cron);
-}
-
-function reset() {
-  hour = 0;
-  minute = 0;
-  second = 0;
-  millisecond = 0;
-  document.getElementById('hour').innerText = '00';
-  document.getElementById('minute').innerText = '00';
-  document.getElementById('second').innerText = '00';
-  document.getElementById('millisecond').innerText = '00';
-}
-
-function timer() {
-  if ((millisecond += 10) == 1000) {
-    millisecond = 0;
-    second++;
-  }
-  if (second == 60) {
-    second = 0;
-    minute++;
-  }
-  if (minute == 60) {
-    minute = 0;
-    hour++;
-  }
-  document.getElementById('hour').innerText = returnData(hour);
-  document.getElementById('minute').innerText = returnData(minute);
-  document.getElementById('second').innerText = returnData(second);
-  document.getElementById('millisecond').innerText = returnData(millisecond);
-}
-
-function returnData(input) {
-  return input >= 10 ? input : `0${input}`
-}
-      </script>
+        function timer() {
+          if ((millisecond += 10) == 1000) {
+            millisecond = 0;
+            second++;
+          }
+          if (second == 60) {
+            second = 0;
+            minute++;
+          }
+          if (minute == 60) {
+            minute = 0;
+            hour++;
+          }
+        }
+        function timer_parcial() {
+          if ((millisecond2 += 10) == 1000) {
+            millisecond2 = 0;
+            second2++;
+          }
+          if (second2 == 60) {
+            second2 = 0;
+            minute2++;
+          }
+          if (minute2 == 60) {
+            minute2 = 0;
+            hour2++;
+          }
+          document.getElementById('hour').innerText = returnData(hour);
+          document.getElementById('minute').innerText = returnData(minute);
+          document.getElementById('second').innerText = returnData(second);
+          document.getElementById('millisecond').innerText = returnData(millisecond);
+          //cronometro total
+          document.getElementById('hour2').innerText = returnData(hour2);
+          document.getElementById('minute2').innerText = returnData(minute2);
+          document.getElementById('second2').innerText = returnData(second2);
+          document.getElementById('millisecond2').innerText = returnData(millisecond2);
+        }
+        function returnData(input) {
+          return input >= 10 ? input : `0${input}`
+        }
+    </script>
 
 
 </body>
