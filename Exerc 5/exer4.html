@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <h1 style="font-family:arial;">Exercicio 04</h1>
+    <h2>Cronometro</h2>
+
+    <form name="form_main" style="background-color: azure; text-align: center; font-size:xx-large; width: 50%">
+        <div>
+          <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">00</span>
+        </div>
+      
+        <br />
+      
+        <button type="button" name="start" style="background-color: green; font-family: arial; border-color: green; font-size: large;"
+        >start</button>
+        <button type="button" name="pause" style="background-color: red; font-family: arial; border-color: red;font-size: large;">pause</button>
+
+        <button type="button" name="reset" style="background-color: aqua; font-family: arial; border-color: aqua;font-size: large;">reset</button>
+      </form>
+
+
+      <form name="form_main2" style="background-color: azure; text-align: center; font-size:xx-large; width: 50%">
+
+        <div>
+          <span id="hour2">00</span>:<span id="minute2">00</span>:<span id="second2">00</span>:<span id="millisecond2">00</span>
+        </div>
+        
+        <br/>
+        <button type="button" name="start" style="background-color: green; font-family: arial; border-color: green; font-size: large;"
+        >start</button>
+        <button type="button" name="pause" style="background-color: red; font-family: arial; border-color: red;font-size: large;">pause</button>
+
+        <button type="button" name="reset" style="background-color: aqua; font-family: arial; border-color: aqua;font-size: large;">reset</button>
+      </form>
+      <script>
+
+"use strict";
+
+let hour = 0;
+let minute = 0;
+let second = 0;
+let millisecond = 0;
+let cron;
+
+let hour2 = 0;
+let minute2 = 0;
+let second2 = 0;
+let millisecond2 = 0;
+let cron2;
+
+document.form_main.start.onclick = () => start();
+document.form_main.pause.onclick = () => pause();
+document.form_main.reset.onclick = () => reset();
+
+document.form_main2.start.onclick = () => start2();
+document.form_main2.pause.onclick = () => pause2();
+document.form_main2.reset.onclick = () => reset2();
+
+function start() {
+  pause();
+  cron = setInterval(() => { timer(); }, 10);
+}
+function start2() {
+  pause2();
+  cron2 = setInterval(() => { timer(); }, 10);
+}
+function pause() {
+  clearInterval(cron);
+}
+function pause2() {
+  clearInterval(cron2);
+}
+
+function reset() {
+  hour = 0;
+  minute = 0;
+  second = 0;
+  millisecond = 0;
+  document.getElementById('hour').innerText = '00';
+  document.getElementById('minute').innerText = '00';
+  document.getElementById('second').innerText = '00';
+  document.getElementById('millisecond').innerText = '00';
+}
+function reset2() {
+  hour2 = 0;
+  minute2 = 0;
+  second2 = 0;
+  millisecond2 = 0;
+  document.getElementById('hour2').innerText = '00';
+  document.getElementById('minute2').innerText = '00';
+  document.getElementById('second2').innerText = '00';
+  document.getElementById('millisecond2').innerText = '00';
+}
+
+function timer() {
+  if ((millisecond += 10) == 1000) {
+    millisecond = 0;
+    second++;
+  }
+  if (second == 60) {
+    second = 0;
+    minute++;
+  }
+  if (minute == 60) {
+    minute = 0;
+    hour++;
+  }
+  document.getElementById('hour').innerText = returnData(hour);
+  document.getElementById('minute').innerText = returnData(minute);
+  document.getElementById('second').innerText = returnData(second);
+  document.getElementById('millisecond').innerText = returnData(millisecond);
+}
+
+function returnData(input) {
+  return input >= 10 ? input : `0${input}`
+}
+      </script>
+
+
+</body>
+</html>
